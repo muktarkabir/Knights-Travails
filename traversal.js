@@ -4,7 +4,7 @@ function kinghtMoves(start, destination) {
     throw new Error("Provide arrays of coordinates for start and destination");
   if (start.length !== 2 || destination.length !== 2)
     throw new Error("Each coordinate should have two numbers between 0 and 7");
-  [...start,...destination].forEach((coord) => {
+  [...start, ...destination].forEach((coord) => {
     if (typeof coord !== "number") {
       throw new Error("Coordinate points must be numbers");
     } else if (coord < 0 || coord > 7) {
@@ -18,28 +18,24 @@ function kinghtMoves(start, destination) {
 }
 
 function possibleMovesFromAPosition(position = [0, 6]) {
-  let arrayOfMoves = [];
-  arrayOfMoves.push([position[0] + 2, position[1] + 1]);
-  arrayOfMoves.push([position[0] + 2, position[1] - 1]);
-  arrayOfMoves.push([position[0] - 2, position[1] + 1]);
-  arrayOfMoves.push([position[0] - 2, position[1] - 1]);
+  const moves = [
+    [2, 1],
+    [2, -1],
+    [-2, 1],
+    [-2, -1],
+    [1, 2],
+    [-1, 2],
+    [1, -2],
+    [-1, -2],
+  ];
 
-  arrayOfMoves.push([position[0] + 1, position[1] + 2]);
-  arrayOfMoves.push([position[0] - 1, position[1] + 2]);
-  arrayOfMoves.push([position[0] + 1, position[1] - 2]);
-  arrayOfMoves.push([position[0] - 1, position[1] - 2]);
-  const filtered = arrayOfMoves.filter(
-    (move) => move[0] >= 0 && move[0] <= 7 && move[1] >= 0 && move[1] <= 7,
-  );
-
-  console.log(arrayOfMoves);
-  console.log("__________________-----_________");
-  console.log(filtered);
-  return filtered;
+  return moves
+    .map(([dx, dy]) => [position[0] + dx, position[1] + dy])
+    .filter(([x, y]) => x >= 0 && x <= 7 && y >= 0 && y <= 7);
 }
 
 const graph = [
-// 0  1  2  3  4  5  6  7
+  // 0  1  2  3  4  5  6  7
   [0, 0, 0, 0, 0, 0, 0, 0], //0
   [0, 0, 0, 0, 0, 0, 0, 0], //1
   [0, 0, 0, 0, 0, 0, 0, 0], //2
@@ -59,4 +55,4 @@ const graph = [
 //  when traversing check if position is  not in visitedPosition to proceed,
 //  otherwise skip and move to next position.
 kinghtMoves([5, 3], [4, 2]);
-possibleMovesFromAPosition([5,3]);
+possibleMovesFromAPosition([5, 3]);
