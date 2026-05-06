@@ -43,6 +43,7 @@ function possibleMovesFromAPosition(position = [0, 6]) {
   console.log(arrayOfMoves);
   console.log("__________________-----_________");
   console.log(filtered);
+  return filtered;
 }
 
 const graph = [
@@ -66,4 +67,4 @@ const graph = [
 //  when traversing check if position is  not in visitedPosition to proceed,
 //  otherwise skip and move to next position.
 kinghtMoves([5, 3], [4, 2]);
-possibleMovesFromAPosition();
+possibleMovesFromAPosition([5,3]);
