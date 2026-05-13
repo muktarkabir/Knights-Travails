@@ -1,5 +1,14 @@
 function kinghtMoves(start, destination) {
   //Check if provided paramenters are valid coordinates
+  validateCoordinates(start,destination);
+  //So now that my coordinates are valid, what next??
+  //First record every position i can visit from the start position
+  //Then explore each one until the destination is reached.
+  //The shortest of these positionsis my answer.
+}
+
+
+export const validateCoordinates = (start,destination)=>{
   if (!Array.isArray(start) || !Array.isArray(destination))
     throw new Error("Provide arrays of coordinates for start and destination");
   if (start.length !== 2 || destination.length !== 2)
@@ -11,12 +20,7 @@ function kinghtMoves(start, destination) {
       throw new Error("Point must be between 0 and 7");
     }
   });
-  //So now that my coordinates are valid, what next??
-  //First record every position i can visit from the start position
-  //Then explore each one until the destination is reached.
-  //The shortest of these positionsis my answer.
 }
-
 export const possibleMovesFromAPosition = (position) => {
   const moves = [
     [2, 1],
