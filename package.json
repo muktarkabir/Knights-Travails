@@ -2,6 +2,7 @@
   "name": "knights-travails",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "traversal.js",
   "scripts": {
     "test": "jest"

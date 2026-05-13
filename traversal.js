@@ -17,7 +17,7 @@ function kinghtMoves(start, destination) {
   //The shortest of these positionsis my answer.
 }
 
-function possibleMovesFromAPosition(position = [0, 6]) {
+export const possibleMovesFromAPosition = (position) => {
   const moves = [
     [2, 1],
     [2, -1],
@@ -54,5 +54,4 @@ const graph = [
 //Something like visitedPositions = [],
 //  when traversing check if position is  not in visitedPosition to proceed,
 //  otherwise skip and move to next position.
-kinghtMoves([5, 3], [4, 2]);
 possibleMovesFromAPosition([5, 3]);
