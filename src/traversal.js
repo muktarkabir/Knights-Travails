@@ -1,4 +1,4 @@
-import { validateCoordinates,possibleMovesFromAPosition } from "./src/utilities.js";
+import { validateCoordinates,possibleMovesFromAPosition } from "./utilities.js";
 
 function kinghtMoves(start, destination) {
   validateCoordinates(start,destination);

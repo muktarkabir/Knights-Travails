@@ -1,4 +1,4 @@
-import { possibleMovesFromAPosition } from "../traversal.js";
+import { possibleMovesFromAPosition } from "../../traversal.js";
 describe("Knight Moves from given position", () => {
   test("Should give correct coordinates", () => {
     const myTest = possibleMovesFromAPosition([5, 3]);
